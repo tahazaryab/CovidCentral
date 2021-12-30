@@ -4,16 +4,11 @@ import styled from '../styles/Toolbar.module.css';
 
 export const Toolbar = () => {
     const router = useRouter();
-
-
     return (
             <div className = {styled.main}>
-                
-                <div onClick={() => router.push('/')}>Home</div>
-                <div onClick={() => router.push('/feed/1')}>Feed</div>
-                <div onClick={() => router.push('/eom')}>EOM</div>
-                <div onClick={() => window.location.href = 'https://www.linkedin.com/in/taha-zaryab-a9a35221b/'}>Twitter</div>
-
+                <div className={styled.home} onClick={() => router.push('/')}>Home</div>
+                <div className={styled.feed} onClick={() => router.push('/feed/1')}>Feed</div>
+                <div onClick={() => window.location.href = 'https://github.com/tahazaryab'}>Github</div>
             </div>
     );
 };

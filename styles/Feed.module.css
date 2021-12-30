@@ -1,8 +1,21 @@
+.div {
+    background-color: springgreen;
+}
 .main {
     display: flex;
-    margin-top: 50px;
+    margin-top: 0px;
     align-items: center;
     flex-direction: column;
+    background-color: silver;
+}
+
+
+.break {
+    background-color: royalblue;
+}
+
+.break2 {
+    background-color: silver;
 }
 
 .post {
@@ -32,6 +45,10 @@
     margin: 25px;
 }
 
+.paginator .active {
+    cursor: pointer;
+}
+
 .paginator .disabled {
     cursor: pointer;
 }
@@ -40,3 +57,28 @@
     cursor: not-allowed;
     color: rgb(179, 179, 179);
 }
+
+.bottombar {
+    background-color: royalblue;
+}
+
+.toolbar {
+    width: 100%;
+    background-color: royalblue;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    color: rgb(195, 226, 231);
+    font-size: 20px;
+    font-family: serif;
+}
+
+.toolbar div {
+    margin: 25px;
+    cursor: pointer;
+}   
+
+.toolbar div:hover {
+    color: rgb(168, 168, 168);
+}
+

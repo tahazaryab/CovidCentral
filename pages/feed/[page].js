@@ -11,7 +11,25 @@ const router = useRouter();
 if(articles) {
     return (
         <div className='page-container'>
-            <Toolbar />
+           
+    
+
+            <div className = {styles.toolbar}>
+                <div className={styles.home} onClick={() => router.push('/')}>Home</div>
+                <div className={styles.feed} onClick={() => router.push('/feed/1')}>Feed</div>
+                <div onClick={() => window.location.href = 'https://github.com/tahazaryab'}>Github</div>
+            </div>
+  
+            <div className={styles.break}>
+            <br></br>
+            <br></br>
+            </div>
+
+            <div className={styles.break2}>
+            <br></br>
+            </div>
+
+
             <div className={styles.main}>
                 {articles.map((article, index) => (
                     <div key={index} className={styles.post}>
@@ -23,31 +41,33 @@ if(articles) {
                 ))}
         </div>
 
-        <div className={styles.paginator}> 
-                <div 
-                onClick={() => {
-                    if(pageNumber > 1) {
-                        router.push('/feed/' + (pageNumber - 1)).then(() => window.scrollTo(0,0));
-                    }
+        <div className={styles.bottombar}>
+            <div className={styles.paginator}> 
+                    <div 
+                    onClick={() => {
+                        if(pageNumber > 1) {
+                            router.push('/feed/' + (pageNumber - 1)).then(() => window.scrollTo(0,0));
+                        }
 
-                }}
-                className={pageNumber === 1? styles.disabled : styles.active}>
-                    Previous Page
-                </div>
+                    }}
+                    className={pageNumber === 1? styles.disabled : styles.active}>
+                        Previous Page
+                    </div>
 
-                <div>{pageNumber}</div>
+                    <div>{pageNumber}</div>
 
-                <div 
-                onClick={() => {
-                    if(pageNumber < 5) {
-                        router.push('/feed/' + (pageNumber + 1)).then(() => window.scrollTo(0,0));
-                    }
+                    <div 
+                    onClick={() => {
+                        if(pageNumber < 5) {
+                            router.push('/feed/' + (pageNumber + 1)).then(() => window.scrollTo(0,0));
+                        }
 
-                }}
-                className={pageNumber === 5? styles.disabled : styles.active}>
-                    Next Page
-                </div>
+                    }}
+                    className={pageNumber === 5? styles.disabled : styles.active}>
+                        Next Page
+                    </div>
 
+            </div>
         </div>
     </div>
     );
@@ -72,7 +92,7 @@ export const getServerSideProps = async pageContext => {
 
     const apiResponse = await fetch(
         
-        'https://newsapi.org/v2/top-headlines?country=us&pageSize=5&page=' + pageNumber,
+        'https://newsapi.org/v2/top-headlines?country=ca&pageSize=5&page=' + pageNumber,
         {
             headers: {
                 Authorization: '8d7684022c7c4a4382d2e8e641f1faa4',
