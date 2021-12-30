@@ -3,6 +3,9 @@
     height: 50px;
     display: flex;
     justify-content: center;
+    color: rgb(159, 192, 223);
+    font-size: 20px;
+    font-family: serif;
 }
 
 .main div {
@@ -13,3 +16,4 @@
 .main div:hover {
     color: rgb(168, 168, 168);
 }
+
